@@ -1,4 +1,9 @@
-form{
-  border:2px solid #D09B52;
-  border-radius:5px;
+input {
+  width: 200px;
+  height: 2px;
+  background: rgb(255 0 106);
+  position: relative;
+  top: -2px;
+  transform-origin: center;
+  transform: scaleX(0);
 }
