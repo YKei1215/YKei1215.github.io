@@ -6,7 +6,6 @@ form{
 }
 #focus{
   border:3px solid #fef6fb;
-  box-shadow:0 0 10px 0 #D09B52;
   position:absolute;
   transition:
     width .2s ease, 
@@ -19,16 +18,8 @@ form{
   border-radius:10px;
   display:none;
 }
-h1{
-  margin-bottom:30px;
-  font-size:2em;
-  color:#000;
-}
 input{
-  padding:10px 15px;
-  border-radius:10px;
   transition:.3s ease;
-  color:#868283;
   
   &[type=text]{
     width:calc(100% - 30px);
