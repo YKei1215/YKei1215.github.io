@@ -1,82 +1,55 @@
-<script type="text/javascript">
-<!--
-
-window.moveTo(screen.width/2-150, screen.height/2-150);
-window.resizeTo(400, 300);
- 
-// CDO.Message オブジェクト生成
-var cdoMsg = new ActiveXObject("CDO.Message");
-
-// CDO オブジェクトコンフィグ用名前空間
-var schemas = "http://schemas.microsoft.com/cdo/configuration/";
-
-// 送信時にネットワークを利用するための設定（ 2 ： cdoSendUsingPort ）
-cdoMsg.Configuration.Fields.Item(schemas+"sendusing") = 2;
-
-// SMTPサーバ設定
-cdoMsg.Configuration.Fields.Item(schemas+"smtpserver") = "★smtp-server★";
-// SMTPポート設定
-cdoMsg.Configuration.Fields.Item(schemas+"smtpserverport") = 25;
- 
-// Basic認証設定
-cdoMsg.Configuration.Fields.Item(schemas + "smtpauthenticate") = true;
-// 認証ユーザ設定
-cdoMsg.Configuration.Fields.Item(schemas + "sendusername") = "★username★";
-// 認証パスワード設定
-cdoMsg.Configuration.Fields.Item(schemas + "sendpassword") = "★password★";
-// SSL使用設定
-cdoMsg.Configuration.Fields.Item(schemas + "smtpusessl") = true;
- 
-// コンフィグ更新
-cdoMsg.Configuration.Fields.Update();
-
-// 送信元アドレス設定
-cdoMsg.From     = "★from-address★";
- 
-function send(){
-
-    // 送信先アドレス設定
-    cdoMsg.To       = document.getElementById("mail_to").value;
-
-    // タイトル設定
-    cdoMsg.Subject  = document.getElementById("mail_subject").value;
-
-    // 本文設定
-    cdoMsg.TextBody = document.getElementById("mail_textbody").value;
- 
-    try {
-
-        // メール送信
-        cdoMsg.Send();
-
-    } catch(e) {
-
-        // エラー発生時の処理
-        alert(e.message);
+<link href="1.css" rel="stylesheet" type="text/css">
+<script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<div id="comments"></div><br>
+<script>
+d3.csv("https://docs.google.com/spreadsheets/d/13b9clXrPUAACBF80smJU-bfaIystddhd0Bd0HxDg1Yg/export?format=csv&range=A3:D", function(error, data){
+  var text = "";
+    for(var i=0; i<data.length; i++){
+      text += i+1 + " 名前:" + data[i].Name + "</a> " + data[i].Timestamp + "<pre>" + data[i].Comments + "</pre>";
     }
+  d3.select("#comments").html(text);
+});
+function MD5(input) {
+  var rawHash = Utilities.computeDigest(Utilities.DigestAlgorithm.MD5, input, Utilities.Charset.UTF_8);
+  var txtHash = '';
+  for (i = 0; i < rawHash.length; i++) {
+    var hashVal = rawHash[i];
+    if (hashVal < 0) {
+      hashVal += 256;
+    }
+    if (hashVal.toString(16).length == 1) {
+      txtHash += '0';
+    }
+    txtHash += hashVal.toString(16);
+  }
+  return txtHash;
 }
-//-->
 </script>
+<form action="https://docs.google.com/forms/d/e/1FAIpQLScWNOME8nZyB2ZVcsiUDXKlv6UwvHaHAbteg62QBbNLe5Qilw/formResponse" target="hidden_iframe" method="post" onsubmit="return test(this.wcheck.value)">
+<p><input name="entry.273244886" placeholder="名前" required></p>
+<p><input name="entry.930638730" placeholder="メールアドレス" type="email" required></p>
+<p><textarea name="entry.1457375592" placeholder="コメント" rows="10" cols="40" maxlength="400" id="wcheck" required style="min-width: 600; max-width: 600px; min-height: 200"></textarea></p>
+<input type="submit" id="submitbutton" value="送信">
+</form>
+<iframe onload='if(submitted){window.location="";}' id=hidden_iframe name=hidden_iframe style=display:none></iframe>
 
-<div style="background-color : #CCC;">
- 
-<table>
-    <tr>
-        <td>宛先</td>
-        <td><input id="mail_to" type="text" placeholder="xxx@yyy.com"></td>
-    </tr>
- 
-    <tr>
-        <td>件名</td>
-        <td><input id="mail_subject" type="text" placeholder="タイトル"></td>
-    </tr>
- 
-    <tr>
-        <td>本文</td>
-        <td><textarea id="mail_textbody" cols=35 rows=10 placeholder="本文"></textarea></td>
-    </tr>
-</table>
-
-<input id=send_button  type="button" value="送信" onClick="send()">
-
-</div>
+<script type="text/javascript">
+var NGComments = ["死ね","バカ",".exe"]; // 簡易的なNGワードの設定
+var regex = new RegExp(NGComments.join("|"));
+function test(wcheck) {
+	if (wcheck.match(regex) != null) {
+		alert("ERROR: コメントにNGワードが含まれています");
+		return false;
+	}
+	document.getElementById("submitbutton").disabled = true;
+	textareas = document.getElementsByTagName('textarea');
+	for(var i=0 ;i < textareas.length ;i ++ ){
+		textareas[i].value = textareas[i].value.replace( /</g ,'&lt;' );
+	}
+	inputs = document.getElementsByTagName('input');
+	for(var i=0 ;i < inputs.length ;i ++ ){
+		inputs[i].value = inputs[i].value.replace( /</g ,'&lt;' );
+	}
+	return submitted=!0;
+}
+</script>
