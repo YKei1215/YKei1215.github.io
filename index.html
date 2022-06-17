@@ -16,7 +16,7 @@ document.getElementById("save").onclick = function(){
       if(Mail != ""){
         localStorage.setItem('Name', text);
         localStorage.setItem('Mail', text);
-        alert('内容を保存しました。');
+        location.reload();
       }else{
       alert('名前またはメールアドレスが入力されていません。');
         return false;
