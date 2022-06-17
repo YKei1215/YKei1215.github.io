@@ -1,28 +1,39 @@
-<input id="N"placeholder="名前"><br>
-<input id="M"placeholder="メールアドレス"><br>
-<input type="button" value="名前とメールアドレスを保存する" onclick="save()">
-<script>
+<script type="text/javascript">
+<!--
 window.onload　=　function() {
-  var N = localStorage.getItem('N');
-  document.getElementById("N").value = N;
-  var M = localStorage.getItem('M');
-  document.getElementById("M").value = M;
+  var NM  = get(NM);
+  document.getElementById("N").innerHTML = NM0;	
+  document.getElementById("M").value = NM1;
+  save();
+  }
 }
-document.getElementById("save").onclick = function(){
-    var N = document.getElementById("N").value;
-    var M = document.getElementById("M").value;
-    if(Name != ""){
-      if(Mail != ""){
-        localStorage.setItem('N');
-        localStorage.setItem('M');
-        location.reload();
-      }else{
-      alert('名前またはメールアドレスが入力されていません。');
-        return false;
-      }
-    }else{
-    alert('名前またはメールアドレスが入力されていません。');
-      return false;
-    }
-};
+
+function get() {
+  var cookieStr = document.cookie + ";";
+  var startNum = cookieStr.indexOf("NM");
+  var txt = "";
+  if (startNum != -1){
+    var endNum = cookieStr.indexOf(";",startNum);
+    txt = unescape(cookieStr.substring(startNum + "NM".length + 1, endNum));
+  }
+  return txt;
+}
+
+function save() {
+  var NM0 = document.getElementById("N").value;
+  var NM1 = document.getElementById("M").value;
+  if (NM != ""){
+      var day = new Date();
+      day.setTime(day.getTime() + 7*24*60*60*1000);
+      document.cookie = "NM" + escape(NM) + ";expires=" + day.toGMTString();
+      location.reload();
+  }
+}
+//-->
 </script>
+<div style="background-color : #CCC;">
+  <div id="dat"></div><br>
+  <input type="text" id="N" placeholder="名前を入力してください"><br>
+  <input type="text" id="M" placeholder="メールアドレスを入力してください"><br>
+  <input type="button" value="名前とメールアドレスを保存" onclick="save()">
+</div>
