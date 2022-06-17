@@ -18,6 +18,7 @@ form{
   display:none;
 }
 input{
+  color:#EAE4DA;
   transition:.3s ease;
   &[type=text]{
     width:calc(100% - 30px);
@@ -31,8 +32,6 @@ input{
   }
   &[type=submit]{
     height: auto;
-    background:#D09B52;
-    color:#EAE4DA;
     border:2px solid #D09B52;
     outline:10px solid #fff;
     width:calc(50% - 30px);
