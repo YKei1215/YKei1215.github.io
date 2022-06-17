@@ -28,12 +28,9 @@ input{
     &::placeholder{
       color:#A3A5AA;
     }
-    &[half]{
-      width:calc(50% - 30px);
-      float:left;
-    }
   }
   &[type=submit]{
+    height: auto;
     background:#D09B52;
     color:#EAE4DA;
     border:2px solid #D09B52;
