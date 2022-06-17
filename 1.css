@@ -1,9 +1,10 @@
 input {
+  padding: 0;        
+  border: none;
+  outline: none;        
   width: 200px;
-  height: 2px;
-  background: rgb(255 0 106);
-  position: relative;
-  top: -2px;
-  transform-origin: center;
-  transform: scaleX(0);
+  height: 30px;
+  font-size: 16px;
+  border-bottom: 1px solid #b4b4b4;
+  cursor: pointer;
 }
