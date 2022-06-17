@@ -1,2 +1,29 @@
-<?php var_dump(hash('sha512', '1234')); ?>
-<div id="dat"></div>
+<textarea id="sample-text1"placeholder="名前"></textarea>
+<textarea id="sample-text2"placeholder="メールアドレス"></textarea><br>
+<input type="button" id="sample-save" value="名前とメールアドレスを保存する" />
+
+<script>
+window.onload　=　function() {
+  var text = localStorage.getItem('memo');
+    document.getElementById("sample-text1").value = text.1;
+    document.getElementById("sample-text2").value = text.2;
+}
+//保存ボタンの処理
+document.getElementById("sample-save").onclick = function(){
+    var text.1 = document.getElementById("sample-text1").value;
+    var text.2 = document.getElementById("sample-text2").value;
+    if(text.1 != ""){
+      if(text.2 != ""){
+        localStorage.setItem('memo', text);
+        alert('内容を保存しました。');
+      }else{
+      alert('名前またはメールアドレスが入力されていません。');
+        return false;
+      }
+      
+    }else{
+    alert('名前またはメールアドレスが入力されていません。');
+      return false;
+    }
+};
+</script>
