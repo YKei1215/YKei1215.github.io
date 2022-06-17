@@ -1,20 +1,21 @@
-<input id="sample-text1"placeholder="名前"><br>
-<input id="sample-text2"placeholder="メールアドレス"><br>
+<input id="Name"placeholder="名前"><br>
+<input id="Mail"placeholder="メールアドレス"><br>
 <input type="button" id="save" value="名前とメールアドレスを保存する">
 
 <script>
 window.onload　=　function() {
-  var text = localStorage.getItem('memo');
-    document.getElementById("sample-text1").value = text.1;
-    document.getElementById("sample-text2").value = text.2;
+  var Name = localStorage.getItem('Name');
+  var Mail = localStorage.getItem('Mail');
+    document.getElementById("Name").value = Name;
+    document.getElementById("Mail").value = Mail;
 }
-//保存ボタンの処理
 document.getElementById("save").onclick = function(){
-    var text.1 = document.getElementById("sample-text1").value;
-    var text.2 = document.getElementById("sample-text2").value;
-    if(text.1 != ""){
-      if(text.2 != ""){
-        localStorage.setItem('memo', text);
+    var Name = document.getElementById("sample-text1").value;
+    var Mail = document.getElementById("sample-text2").value;
+    if(Name != ""){
+      if(Mail != ""){
+        localStorage.setItem('Name', text);
+        localStorage.setItem('Mail', text);
         alert('内容を保存しました。');
       }else{
       alert('名前またはメールアドレスが入力されていません。');
