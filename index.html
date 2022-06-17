@@ -1,21 +1,21 @@
-<input id="Name"placeholder="名前"><br>
-<input id="Mail"placeholder="メールアドレス"><br>
+<input id="N"placeholder="名前"><br>
+<input id="M"placeholder="メールアドレス"><br>
 <input type="button" id="save" value="名前とメールアドレスを保存する">
 
 <script>
 window.onload　=　function() {
-  var Name = localStorage.getItem('Name');
-    document.getElementById("Name").value = Name;
-  var Mail = localStorage.getItem('Mail');
-    document.getElementById("Mail").value = Mail;
+  var N = localStorage.getItem('N');
+  document.getElementById("N").value = N;
+  var M = localStorage.getItem('M');
+  document.getElementById("M").value = M;
 }
 document.getElementById("save").onclick = function(){
-    var Name = document.getElementById("Name").value;
-    var Mail = document.getElementById("Mail").value;
+    var N = document.getElementById("N").value;
+    var M = document.getElementById("M").value;
     if(Name != ""){
       if(Mail != ""){
-        localStorage.setItem('Name', text);
-        localStorage.setItem('Mail', text);
+        localStorage.setItem('N');
+        localStorage.setItem('M');
         location.reload();
       }else{
       alert('名前またはメールアドレスが入力されていません。');
