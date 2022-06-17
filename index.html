@@ -1,6 +1,6 @@
 <textarea id="sample-text1"placeholder="名前"></textarea>
 <textarea id="sample-text2"placeholder="メールアドレス"></textarea><br>
-<input type="button" id="sample-save" value="名前とメールアドレスを保存する" />
+<input type="button" id="save" value="名前とメールアドレスを保存する" />
 
 <script>
 window.onload　=　function() {
@@ -9,7 +9,7 @@ window.onload　=　function() {
     document.getElementById("sample-text2").value = text.2;
 }
 //保存ボタンの処理
-document.getElementById("sample-save").onclick = function(){
+document.getElementById("save").onclick = function(){
     var text.1 = document.getElementById("sample-text1").value;
     var text.2 = document.getElementById("sample-text2").value;
     if(text.1 != ""){
