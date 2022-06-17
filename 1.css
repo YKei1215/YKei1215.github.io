@@ -23,7 +23,6 @@ input{
   
   &[type=text]{
     width:calc(100% - 30px);
-    margin-bottom:30px;
     border:2px solid #868283;
     &:placeholder-shown{
       border:2px solid #EAE4DA;
