@@ -8,10 +8,6 @@ async function sha256(str) {
    // (from: https://stackoverflow.com/a/40031979)
    return [].map.call(new Uint8Array(digest), x => ('00' + x.toString(16)).slice(-2)).join('');
 }
-(async () => {
-   const digest = await sha256("hello");
-   // 2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824
-})();
 document.getElementById("dat").value = (async () => {const digest = await sha256("hello");})();;
 </script>
 <div id="dat"></div>
