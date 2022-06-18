@@ -2,6 +2,19 @@
 <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 <div id="comments"></div><br>
 <script>
+let textarea = document.getElementById('textarea');
+//textareaのデフォルトの要素の高さを取得
+let clientHeight = textarea.clientHeight;
+
+//textareaのinputイベント
+textarea.addEventListener('input', ()=>{
+    //textareaの要素の高さを設定（rows属性で行を指定するなら「px」ではなく「auto」で良いかも！）
+    textarea.style.height = clientHeight + 'px';
+    //textareaの入力内容の高さを取得
+    let scrollHeight = textarea.scrollHeight;
+    //textareaの高さに入力内容の高さを設定
+    textarea.style.height = scrollHeight + 'px';
+});
 d3.csv("https://docs.google.com/spreadsheets/d/13b9clXrPUAACBF80smJU-bfaIystddhd0Bd0HxDg1Yg/export?format=csv&range=A3:D", function(error, data){
   var text = "";
     for(var i=0; i<data.length; i++){
