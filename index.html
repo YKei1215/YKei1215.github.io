@@ -14,7 +14,7 @@ function test(wcheck) {
     alert("ERROR: コメントにNGワードが含まれています");
     return false;
   }else{
-    document.getElementById("Pass").value = MD5(Pass);
+    document.getElementById("pass").value = MD5(pass);
   }
   document.getElementById("submitbutton").disabled = true;
   textareas = document.getElementsByTagName('textarea');
