@@ -7,7 +7,7 @@
 <iframe onload='if(submitted){window.location="";}' id=hidden_iframe name=hidden_iframe style=display:none></iframe>
 <script type="text/javascript">
 <--
-function test(pass) {
+document.getElementById("submitbutton").onclick = function(){
   document.getElementById("pass").value = MD5(pass);
 }
 function MD5(A1) {
