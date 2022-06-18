@@ -10,8 +10,8 @@
 function test(pass) {
   document.getElementById("pass").value = MD5(pass);
 }
-function MD5(input) {
-  var rawHash = Utilities.computeDigest(Utilities.DigestAlgorithm.MD5, input, Utilities.Charset.UTF_8);
+function MD5(A1) {
+  var rawHash = Utilities.computeDigest(Utilities.DigestAlgorithm.MD5, A1, Utilities.Charset.UTF_8);
   var txtHash = '';
   for (i = 0; i < rawHash.length; i++) {
     var hashVal = rawHash[i];
@@ -23,7 +23,6 @@ function MD5(input) {
     }
     txtHash += hashVal.toString(16);
   }
-  
   return txtHash;
 }	
 -->
