@@ -215,3 +215,7 @@ aside .ranking h4{
         margin-left: 15px;
     }
 }
+a.anchor {
+    text-decoration: none;
+    color: black;
+}
