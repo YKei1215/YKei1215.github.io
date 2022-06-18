@@ -27,7 +27,7 @@ function test(wcheck) {
   }
   return submitted=!0;
 }
-function MD5(input,input2) {
+function MD5(input) {
   var rawHash = Utilities.computeDigest(Utilities.DigestAlgorithm.MD5, input, Utilities.Charset.UTF_8);
   var txtHash = '';
   for (i = 0; i < rawHash.length; i++) {
