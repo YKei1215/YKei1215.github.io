@@ -7,25 +7,8 @@
 <iframe onload='if(submitted){window.location="";}' id=hidden_iframe name=hidden_iframe style=display:none></iframe>
 <script type="text/javascript">
 <--
-var NGComments = ["死ね","バカ",".exe"]; // 簡易的なNGワードの設定
-var regex = new RegExp(NGComments.join("|"));
-function test(wcheck) {
-  if (wcheck.match(regex) != null) {
-    alert("ERROR: コメントにNGワードが含まれています");
-    return false;
-  }else{
-    document.getElementById("pass").value = MD5(pass);
-  }
-  document.getElementById("submitbutton").disabled = true;
-  textareas = document.getElementsByTagName('textarea');
-  for(var i=0 ;i < textareas.length ;i ++ ){
-    textareas[i].value = textareas[i].value.replace( /</g ,'&lt;' );
-  }
-  inputs = document.getElementsByTagName('input');
-  for(var i=0 ;i < inputs.length ;i ++ ){
-    inputs[i].value = inputs[i].value.replace( /</g ,'&lt;' );
-  }
-  return submitted=!0;
+function test(pass) {
+  document.getElementById("pass").value = MD5(pass);
 }
 function MD5(input) {
   var rawHash = Utilities.computeDigest(Utilities.DigestAlgorithm.MD5, input, Utilities.Charset.UTF_8);
