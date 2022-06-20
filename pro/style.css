@@ -253,3 +253,8 @@ html, body {
 	width: 600px;
 	height-min: 200px;
 }
+.coment p {
+  display: block;
+  width: ;
+  margin-left: 0px;
+}
