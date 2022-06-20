@@ -101,7 +101,9 @@ article a::after {
     display: flex;
     justify-content: space-between;
 }
-
+.IM {
+    text-align: left
+}
 main {
     flex: 0.66;
 }
