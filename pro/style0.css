@@ -121,6 +121,10 @@ main img {
 main .article-intro {
     text-align: center;
     padding: 10px 85px 30px 40px;
+    summary {
+      display: block;
+      list-style: none;
+    }
 }
 
 /* aside section */
@@ -215,7 +219,4 @@ aside .ranking h4{
         margin-left: 15px;
     }
 }
-summary {
-  display: block;
-  list-style: none;
-}
+
