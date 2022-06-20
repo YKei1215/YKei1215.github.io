@@ -60,6 +60,14 @@ header nav ul li a {
     margin-bottom: 70px;
     text-align: center;
 }
+.NO {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 70px;
+    margin-bottom: 70px;
+    text-align: center;
+}
 
 .new-article article{
     width: 32%;
