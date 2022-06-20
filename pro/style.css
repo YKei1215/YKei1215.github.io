@@ -227,3 +227,6 @@ aside .ranking h4{
         margin-left: 15px;
     }
 }
+html, body {
+  scroll-padding-top: 60px;
+}
