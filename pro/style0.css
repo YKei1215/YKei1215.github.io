@@ -215,67 +215,7 @@ aside .ranking h4{
         margin-left: 15px;
     }
 }
-details{
-  height: 10px;
-  margin-bottom: 100px;
-  transition: all .5s ease; 
-}
-summary{
-  position: relative;
-  display: flex;
-  align-items: center;
-  width: 100%;
-  height: 40px;
-  padding-top: 5px;
-  padding-left: 30px;
-  color: #fff;
-  text-shadow: 1px 1px 1px black;
-  font-size: 1.5em;
-  font-weight: bold;
-  transition: all .3s ease;
-  cursor: pointer;
-}
-.html{
-  background: rgb(255, 157, 0);             
-}
-.html:hover{
-  background: rgb(165, 102, 0);
-}
-.css{
-  background: rgb(0, 162, 255);
-}
-.css:hover{
-  background: rgb(0, 100, 158);
-}
-.js{
-  background: rgb(255, 251, 0);
-}
-.js:hover{
-  background: rgb(177, 150, 0);
-}
-summary::after{
-  content: '+';
-  position: absolute;
-  right: 20px;
-  transition: all .3s ease;
-}
-details[open] summary::after{
-  transform: rotate(45deg);
-}
-details[open] {
-  height: 300px;
-}
-details[open] .codeWrapper{
-  overflow: auto;
-  animation: ani 1s ;
-}
-@keyframes ani {
-  0%{
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  100%{
-    opacity: 1;
-    transform: none;
-  }
+summary {
+  display: block;
+  list-style: none;
 }
