@@ -238,7 +238,7 @@ aside .ranking h4{
 html, body {
   scroll-padding-top: 147px;
 }
-input {
+.coment input {
   padding: 0;        
   border: none;
   outline: none;        
@@ -248,7 +248,7 @@ input {
   border-bottom: 1px solid #b4b4b4;
   cursor: pointer;
 }
-textarea {
+.coment textarea {
 	resize: none;
 	width: 600px;
 	height-min: 200px;
