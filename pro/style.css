@@ -238,3 +238,18 @@ aside .ranking h4{
 html, body {
   scroll-padding-top: 147px;
 }
+input {
+  padding: 0;        
+  border: none;
+  outline: none;        
+  width: 200px;
+  height: 30px;
+  font-size: 16px;
+  border-bottom: 1px solid #b4b4b4;
+  cursor: pointer;
+}
+textarea {
+	resize: none;
+	width: 600px;
+	height-min: 200px;
+}
