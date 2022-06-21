@@ -253,8 +253,12 @@ html, body {
 	width: 600px;
 	height-min: 200px;
 }
-.comments ul{
+.comments li{
   display: block;
   width: 100px;
   margin-left: 0px;
+}
+.comments p{
+  font-color: gray;
+  font-size: 10px;
 }
