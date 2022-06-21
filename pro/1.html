@@ -95,7 +95,9 @@
           d3.csv("https://docs.google.com/spreadsheets/d/13b9clXrPUAACBF80smJU-bfaIystddhd0Bd0HxDg1Yg/export?format=csv&range=A3:D", function(error, data){
             var text = "";
               for(var i=0; i<data.length; i++){
-                text += "<ul><h6>" + data[i].Timestamp + "</h6><h5>" + data[i].Name + "さん</h5></ul><h4>" + data[i].Comments + "</h4>";
+                if (data[i].N){
+                  text += "<ul><h6>" + data[i].T + "</h6><h5>" + data[i].N + "さん</h5></ul><h4>" + data[i].C + "</h4>";
+                }
               }
             d3.select("#comments").html(text);
           });
