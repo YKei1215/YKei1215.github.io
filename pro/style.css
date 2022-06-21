@@ -262,7 +262,7 @@ html, body {
   width: 100px;
   margin-left: 0px;
 }
-.comments p{
+.comments h4{
   font-color: gray;
-  font-size: 10px;
+  font-size: 1px;
 }
