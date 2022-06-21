@@ -263,7 +263,10 @@ html, body {
   width: 100px;
   margin-left: 0px;
 }
-.comments h4{
+.comments h6{
   color: #808080;
   font-size: 1px;
+}
+.comments h4{
+  padding-left: 20px;
 }
