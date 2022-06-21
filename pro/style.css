@@ -254,6 +254,9 @@ html, body {
 	height-min: 200px;
 }
 .comments li{
+  list-style:none
+}
+.comments li::after{
   display: block;
   width: 100px;
   margin-left: 0px;
