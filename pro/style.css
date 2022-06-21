@@ -253,11 +253,11 @@ html, body {
 	width: 600px;
 	height-min: 200px;
 }
-.comments li{
+.comment li{
   list-style:none
   float: left;
 }
-.comments li::after{
+.comment li::after{
   list-style:none	
   display: block;
   width: 100px;
