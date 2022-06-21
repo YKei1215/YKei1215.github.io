@@ -266,4 +266,8 @@ html, body {
 .comments h4{
   color: #808080;
   font-size: 1px;
+  display: none;
+}
+.comments h4{
+  display: none;
 }
