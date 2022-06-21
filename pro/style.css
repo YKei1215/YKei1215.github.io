@@ -77,6 +77,11 @@ header nav ul li a {
   width: auto;
   margin-left: 0px;
 }
+.ht h3::after{
+  display: block;
+  width: 300px;
+  margin-left: 0px;
+}
 .new-article article{
     width: 32%;
 }
