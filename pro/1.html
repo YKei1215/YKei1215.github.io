@@ -55,7 +55,7 @@
           d3.csv("https://docs.google.com/spreadsheets/d/13b9clXrPUAACBF80smJU-bfaIystddhd0Bd0HxDg1Yg/export?format=csv&range=A3:D", function(error, data){
             var text = "";
               for(var i=0; i<data.length; i++){
-                text += "<h5><li>" + data[i].Name + "さん</li></h5><li><h4>" + data[i].Timestamp + "<h4></li></p><h5>" + data[i].Comments + "</h5>";
+                text += "<h5>" + data[i].Name + "さん</h5><h4>" + data[i].Timestamp + "<h4><h5>" + data[i].Comments + "</h5>";
               }
             d3.select("#comments").html(text);
           });
