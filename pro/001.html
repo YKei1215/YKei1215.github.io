@@ -92,7 +92,7 @@
           <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
           <div id="comments" class="comments"></div><br>
           <script>
-          d3.csv("https://docs.google.com/spreadsheets/d/13b9clXrPUAACBF80smJU-bfaIystddhd0Bd0HxDg1Yg/export?format=csv&range=A3:D", function(error, data){
+          d3.csv("https://docs.google.com/spreadsheets/d/1xBXrdiSj5PUCvJsYWudyzy5Jfu4uBZYIzyMX4L9fuS8/export?format=csv&range=A3:D", function(error, data){
             var text = "";
               for(var i=0; i<data.length; i++){
                 if (data[i].N){
@@ -102,24 +102,10 @@
             d3.select("#comments").html(text);
           });
           </script>
-          <form action="https://docs.google.com/forms/d/e/1FAIpQLScWNOME8nZyB2ZVcsiUDXKlv6UwvHaHAbteg62QBbNLe5Qilw/formResponse" target="hidden_iframe" method="post" onsubmit="return test(this.wcheck.value)">
-          <p><input name="entry.273244886" placeholder="名前" minlength="8" maxlength="32" required></p>
-          <p><input name="entry.930638730" placeholder="メールアドレス" type="email"></p>
-          <p><textarea name="entry.1457375592" placeholder="コメント" rows="10" cols="40" maxlength="400" id="wcheck" required style="min-width: 600; max-width: 600px; min-height: 200"></textarea></p>
-          <!--
-          <input name="entry.1850581318">
-          <input name="entry.1745043786">
-          <input name="entry.510620050">
-          <input name="entry.344696903">
-          <input name="entry.518151437">
-          <input name="entry.685477704">
-          <input name="entry.595739725">
-          <input name="entry.637916714">
-          <input name="entry.1075461550">
-          <input name="entry.1909124752">
-          <input name="entry.1087409948">
-          <input name="entry.1545446657">
-          -->          
+          <form action="https://docs.google.com/forms/d/e/1FAIpQLSclFXLz40mu18UtjDRdJX1DXDxbcYypZbUqHya31MXwNkiRVA/formResponse" target="hidden_iframe" method="post" onsubmit="return test(this.wcheck.value)">
+          <p><input name="entry.502151223" placeholder="名前" minlength="8" maxlength="32" required></p>
+          <p><input name="entry.645683077" placeholder="メールアドレス" type="email"></p>
+          <p><textarea name="entry.1396852944" placeholder="コメント" rows="10" cols="40" maxlength="400" id="wcheck" required style="min-width: 600; max-width: 600px; min-height: 200"></textarea></p>
           <input type="submit" id="submitbutton" value="送信">
           </form>
           <iframe onload='if(submitted){window.location="";}' id=hidden_iframe name=hidden_iframe style=display:none></iframe>
