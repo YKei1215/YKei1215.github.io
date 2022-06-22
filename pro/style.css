@@ -72,7 +72,7 @@ header nav ul li a {
 .ht{
   justify-content: space-around;
 }
-.ht p::after{
+.ht a::after{
   display: block;
   width: auto;
   margin-left: 0px;
